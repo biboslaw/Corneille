@@ -1,8 +1,13 @@
-/* Add a black background color to the top navigation */
+@font-face {
+    font-family: latoFont;
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    font-family: latoFont;
 }
 
 nav {
@@ -44,61 +49,85 @@ nav {
 .iconRwd {
     display: none;
     float: right;
+    text-align: center;
     
-}
-
-.hamburger {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    padding-top: 4px;
-    padding-right: 2px;
-}
-
-.xIcon {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    padding-top: 4px;
-    padding-right: 2px;
-    display: none;    
 }
 
 @media screen and (max-width: 600px) {
     
-    .topnav a:not(:first-child) {
+    .topnav a {
         display: none;
+        transition: 0.2s;
+        
     }
     
     .topnav a.iconRwd {
-        float: right;
+        height: 44px;
+        width: 56px;
+        float:right;
         display: inline-block;
-        padding: 0;
+        padding: 0 0 4px 0;
         margin: 0;
-        height: 48px;
-        width: 48px;
+        font-size: 32px;
+        color: white;  
+        background-color: rgba(0,0,0,0.1);
+        border-bottom-left-radius: 5px;
     }
     
     .topnav {
+        color: darkgrey;
         background-color: transparent;
     }
+    
+    .topnav a.active{
+        background-color: rgba(0,0,0,0.1);
+    }
+    
+    .topnav a.topnavRwd{
+        float: none;
+        width: 100%;
+        display: block;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+    }
+    
+    .topnav a.topnavRwd:nth-child(odd){
+        background-color: rgba(0,0,0,0.3);
+    }
+    
+    .iconRwd2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+}
+    
+@media screen and (max-width: 600px) {
+
     
 }
 
 article {
-    height: 100vh; 
-    background-image: url(../images/BAD_7808.jpg);
-    background-position: left center;
-    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 #home {
-    
+    position: relative;
+    background-image: url(../images/BAD_7808.jpg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+
 }
 
-#home img {
-    height: 100vh;
-    
+.logo {
+    position: absolute;
+    top: 30%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    z-index: 0;
 }
 
 /*#home .column {
@@ -136,4 +165,8 @@ article {
 
 #contact {
     background-color: chartreuse;
+}
+
+.hidden {
+    display: none;
 }
