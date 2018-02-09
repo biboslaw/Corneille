@@ -5,23 +5,20 @@ function main (){
     })
     var a = document.querySelectorAll('.topnav a')
     console.log(a)
-        for(var j=0; j<a.length; j++){
-            a[j].addEventListener('click', function(){
-                bla() 
-            })
-                               
-        }
+      
+    
+    var images = document.querySelectorAll('#products img')
+    for (var j = 0; j<images.length; j++){
+        images[j].addEventListener('click', function(e){
+            openModal(e)
+        })
+        images[j].addEventListener('touchcenter', function(e){
+            e.stopPropagation()
+            openModal(e)
+        })
+    }
 }
 
-function bla (){
-    for (var k = 0; k < a.length; k++) {
-                  if (k === a.length - 1) {
-                      a[k].classList.toggle('iconRwd2')
-                  } else {
-                      a[k].classList.toggle('topnavRwd')
-                  }
-              }
-}
                                
 function changeDisplay(e) {
     e.preventDefault();
@@ -34,6 +31,14 @@ function changeDisplay(e) {
             a[i].classList.toggle('topnavRwd')
         }
     }
+}
+
+function openModal(e){
+    var modal = document.querySelector('.modal')
+    modal.style.display = 'block'
+    var cloneImg = e.target.cloneNode()
+    modal.appendChild(cloneImg)
+    
 }
 
 document.addEventListener("DOMContentLoaded", main())

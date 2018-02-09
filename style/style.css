@@ -118,7 +118,7 @@ article {
 #home {
     height: 100vh;
     position: relative;
-    background-image: url(../images/BAD_7808.jpg);
+    background-image: url(../images/BAD_7808_.jpg);
     background-position: left center;
     background-repeat: no-repeat;
     display: flex;
@@ -163,6 +163,7 @@ article {
     text-align: center;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 40px;
 }
 
 #about h2 {
@@ -173,13 +174,43 @@ article {
     text-align: justify;
 }
 
+
 #about img {
     width: 150px;
     height: 150px;
 }
 
 #products {
-    background-color: blueviolet;
+    background-color: #f5e9dc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#products h2 {
+    text-align: center;
+    padding-top: 2em;
+}
+
+#products h4 {
+    text-align: right;
+    color: #16a085;
+    padding-right: 20px;
+}
+
+#products p {
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.product img {
+    width: 85%;
+    height: auto;
+    border: 4px solid white;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto;
 }
 
 #contact {
@@ -188,4 +219,15 @@ article {
 
 .hidden {
     display: none;
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 2;
 }
