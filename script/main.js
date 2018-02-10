@@ -49,8 +49,30 @@ function openModal(e){
         img.setAttribute('src', './images/' + productName + '/' + productName + d + '_.jpg')
         div.appendChild(img)    
     }
-    modal.appendChild(div)   
+    modal.appendChild(div)
+    var smallImages = div.querySelectorAll('img')
+    for (var i = 0; i<smallImages.length; i++){
+        smallImages[i].addEventListener('click', function(e){
+            e.preventDefault()
+            var temp = e.target.parentElement.querySelector('.mainImage').getAttribute('src')
+            var thisAttribute = e.target.getAttribute('src')
+            console.log(temp)
+            e.target.setAttribute('src', temp)
+            e.target.parentElement.querySelector('.mainImage').setAttribute('src', thisAttribute)
+        })
+    }
     modal.classList.remove('hidden')
 }
 
+
+
 document.addEventListener("DOMContentLoaded", main())
+
+
+/* smallImages[z].addEventListener('click' function(e){
+            e.preventDefault()
+            var temp = e.target.parentElement.querySelector('.mainImage').getAttribute('src')
+            var thisAttribute = e.target.getAttribute('src')
+            e.target.setAttribute('src', temp)
+            e.target.setAttribute('src' thisAttribute)
+        })*/
