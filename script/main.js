@@ -7,8 +7,12 @@ function main (){
     
     var close = document.querySelector('.close')
     close.addEventListener('click', function(e){
-        e.target.parentElement
-    })
+        e.preventDefault()
+        var removeNode = e.target.parentElement.querySelector('.modalGallery')
+        console.log(removeNode)
+        e.target.parentElement.removeChild(removeNode)
+        e.target.parentElement.classList.add('hidden')
+        })
     var images = document.querySelectorAll('#products .product img')
     console.log(images)
     for (var j = 0; j<images.length; j++){
@@ -42,18 +46,11 @@ function openModal(e){
     div.appendChild(cloneImg)
     for (var d = 1; d<4; d++){
         var img = document.createElement('img')
-        img.setAttribute('src', '../images/'+productName+d+'_.jpg')
-        div.appendChild(img)
-        
+        img.setAttribute('src', './images/' + productName + '/' + productName + d + '_.jpg')
+        div.appendChild(img)    
     }
-    modal.appendChild(div)
-    
-    
-    
-    modal.style.display = 'block'
-    console.log(productName)
-    
-    
+    modal.appendChild(div)   
+    modal.classList.remove('hidden')
 }
 
 document.addEventListener("DOMContentLoaded", main())
