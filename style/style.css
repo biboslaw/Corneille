@@ -82,7 +82,6 @@ nav {
     .topnav {
         color: darkgrey;
         background-color: transparent;
-        height: 100vh;
     }
     
     .topnav a.active{
@@ -106,10 +105,7 @@ nav {
     
 }
     
-@media screen and (max-width: 600px) {
 
-    
-}
 
 article {
 
@@ -213,6 +209,15 @@ article {
     margin: 0 auto;
 }
 
+.product1 img {
+    width: 85%;
+    height: auto;
+    border: 4px solid white;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto;
+}
+
 #contact {
     background-color: chartreuse;
 }
@@ -230,4 +235,34 @@ article {
     background-color: rgba(0,0,0,0.7);
     display: none;
     z-index: 2;
+    display: none;
+}
+
+.close {
+    color: white;
+    text-align: right;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.modalGallery {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.modal .modalGallery .mainImage {   
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.modal .modalGallery img {
+    display: inline-block;
+    width: 33%;
+    float: left;
 }

@@ -4,16 +4,15 @@ function main (){
        changeDisplay(e)
     })
     var a = document.querySelectorAll('.topnav a')
-    console.log(a)
-      
     
-    var images = document.querySelectorAll('#products img')
+    var close = document.querySelector('.close')
+    close.addEventListener('click', function(e){
+        e.target.parentElement
+    })
+    var images = document.querySelectorAll('#products .product img')
+    console.log(images)
     for (var j = 0; j<images.length; j++){
         images[j].addEventListener('click', function(e){
-            openModal(e)
-        })
-        images[j].addEventListener('touchcenter', function(e){
-            e.stopPropagation()
             openModal(e)
         })
     }
@@ -35,9 +34,25 @@ function changeDisplay(e) {
 
 function openModal(e){
     var modal = document.querySelector('.modal')
-    modal.style.display = 'block'
+    var div = document.createElement('div')
+    div.classList.add('modalGallery')
     var cloneImg = e.target.cloneNode()
-    modal.appendChild(cloneImg)
+    cloneImg.classList.add('mainImage')
+    var productName = e.target.parentElement.dataset.product
+    div.appendChild(cloneImg)
+    for (var d = 1; d<4; d++){
+        var img = document.createElement('img')
+        img.setAttribute('src', '../images/'+productName+d+'_.jpg')
+        div.appendChild(img)
+        
+    }
+    modal.appendChild(div)
+    
+    
+    
+    modal.style.display = 'block'
+    console.log(productName)
+    
     
 }
 
