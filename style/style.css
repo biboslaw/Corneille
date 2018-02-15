@@ -334,7 +334,7 @@ textarea {
 
 @media all and (orientation: portrait){
     #contact {
-        background-color: red;
+        height: auto;
     }
 }
 
