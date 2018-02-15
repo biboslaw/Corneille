@@ -2,15 +2,19 @@ function main (){
     var hamburger = document.querySelector('.iconRwd')
     hamburger.addEventListener('click', function(e){  
        changeDisplay(e)
+        var a = document.querySelectorAll('.topnav a')
+        for (var j = 0; j<a.length; j++){
+        a[j].addEventListener('click', function(e){
+            e.target.classList.remove('topnavRwd')
+        })
+    }
     })
-    var a = document.querySelectorAll('.topnav a')
     
     var modal = document.querySelector('.modal')
     modal.addEventListener('click', function(e){
         closeModal(e)
         })
     var images = document.querySelectorAll('#products .product img')
-    console.log(images)
     for (var j = 0; j<images.length; j++){
         images[j].addEventListener('click', addModal)
     }
@@ -31,15 +35,23 @@ function closeModal (e){
 function changeDisplay(e) {
     e.preventDefault();
     var a = e.target.parentElement.querySelectorAll('a')
+    console.log(a)
     for (var i = 0; i<a.length; i++){
-        e.target.parentElement.style.position = 'relative'
-        if (i===a.length-1){
-            a[i].classList.toggle('iconRwd2')
-        } else {
+        e.target.parentElement.querySelector('.topnav').style.position = 'relative'
             a[i].classList.toggle('topnavRwd')
         }
     }
+
+function hideNav (e) {
+    var topnaw = e.target.parentElement.querySelectorAll('a')
+    console.log(topnaw)
+    for (var i = 0; i<topnaw.length; i++){
+        topnaw[i].classList.toggle('topnavRwd')
+        console.log(topnaw[i])
+    }
+    e.target.parentElement.style.position = 'absolute'
 }
+
 
 function openModal(e){
     var modal = document.querySelector('.modal')
@@ -73,7 +85,6 @@ function openModal(e){
         smallImages[i].addEventListener('click', function(e){
             e.stopPropagation()
             e.preventDefault()
-           // var temp = e.target.parentElement.querySelector('.mainImage').getAttribute('src')
             var thisAttribute = e.target.getAttribute('src')
             if (width>600 && productName==='cora'){
                 thisAttribute = insert(thisAttribute,'_big',13)
@@ -84,11 +95,6 @@ function openModal(e){
             } else if (width<600){
                 e.target.parentElement.querySelector('.mainImage').setAttribute('src', thisAttribute) 
             }
-            console.log(thisAttribute)
-              
-                //console.log(insert(thisAttribute,'_big',15))
-           // e.target.setAttribute('src', temp)
-            
         })
     }
     modal.classList.remove('hidden')
@@ -102,12 +108,3 @@ function insert(original, string, place) {
 }
 
 document.addEventListener("DOMContentLoaded", main())
-
-
-/* smallImages[z].addEventListener('click' function(e){
-            e.preventDefault()
-            var temp = e.target.parentElement.querySelector('.mainImage').getAttribute('src')
-            var thisAttribute = e.target.getAttribute('src')
-            e.target.setAttribute('src', temp)
-            e.target.setAttribute('src' thisAttribute)
-        })*/

@@ -18,36 +18,32 @@ nav {
 }
 
 .topnav {
-    background-color: #333;
+    background-color: rgba(230,230,230,0.5);
     overflow: hidden;    
 }
 
 .topnav a {
-    float: left;
-    color: #f2f2f2;
+    float: right;
+    color: #444;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgba(76,175,80,0.5);
     color: black;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
     color: white;
 }
 
 .iconRwd {
     display: none;
     float: right;
-    text-align: center;
-    
+    text-align: center; 
 }
 
 .logoLink {
@@ -55,14 +51,8 @@ nav {
     width: 200px;
 }
 
-
-
-
-
 #home .column img {
     display: none;
-    
-
 }
 
 #home {
@@ -332,18 +322,12 @@ textarea {
     }
 }
 
-@media all and (orientation: landscape){
-    #contact {
-        height: auto;
-    }
-}
-
 @media only  screen and (-webkit-device-pixel-ratio: 2){
     #home {
         background-size: cover;
     }
 }
-
+/* nav */
 @media only screen and (max-width: 600px) {
     
     .topnav a {
@@ -352,7 +336,8 @@ textarea {
         
     }
     
-    .topnav a.iconRwd {
+    .iconRwd {
+        outline: none;
         height: 44px;
         width: 56px;
         float:right;
@@ -363,11 +348,21 @@ textarea {
         color: white;  
         background-color: rgba(0,0,0,0.1);
         border-bottom-left-radius: 5px;
+        border: none;
+        position: fixed;
+        
     }
     
     .topnav {
         color: darkgrey;
         background-color: transparent;
+        position: absolute;
+        float: none;
+        width: 100%;
+        display: block;
+        background-color: rgba(255,255,255,0.8);
+        color: #888;
+        z-index: -1;
     }
     
     .topnav a.active{
@@ -384,12 +379,6 @@ textarea {
     .topnav a.iconRwd2 {
         display: none;
     } 
-}
-
-@media all and (orientation: portrait) {
-    #contact {
-        height: none;
-    }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -491,9 +480,6 @@ textarea {
         padding: 4px;
         box-sizing: border-box;
     }
-    nav {
-        display: none;
-    }
     .logo {
         background-color: silver;
         width: 20%;
@@ -577,5 +563,36 @@ textarea {
     }
     .instaIcon {
         padding-right: 80px;
+    }
+}
+
+@media only screen and (max-width: 1025px) and (orientation: landscape){
+    #contact {
+        height: 450px;
+    }
+    .contactLogo {
+        margin-top: 10px;
+        width: 15%;
+    }
+    .contactData {
+        margin-top: 50px;;
+    }
+    .fbIcon {
+        width: 60px;
+        height: auto;
+    }
+    .instaIcon {
+        width: 60px;
+        height: auto;
+    }
+    form {
+        height: 55%
+    }
+}
+
+@media only screen and (max-height: 480px) and (orientation: landscape){
+    .contactData {
+        height: 1%;
+        margin-top: 15px;
     }
 }
