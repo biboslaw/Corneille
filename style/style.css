@@ -149,6 +149,7 @@ nav {
     border-radius: 3px;
     display: block;
     margin: 0 auto;
+    cursor: pointer;   
 }
 
 
@@ -291,6 +292,7 @@ textarea {
     box-sizing: border-box;
     display: inline-block;
     width: 31.5%;
+    cursor: pointer;
     
 }
 
@@ -455,6 +457,7 @@ textarea {
 }
 
 @media only screen and (min-width: 1025px) { 
+
     #home {
         background-image: none;
         display: flex;
@@ -490,8 +493,14 @@ textarea {
         margin: 0 auto;
     }
     #about p {
-        width: 51%;
-        margin: 0 auto;
+        width: 70%;
+        margin: 100px auto;
+        -webkit-column-count:  2; /* Chrome, Safari, Opera */
+        -moz-column-count:  2; /* Firefox */
+        column-count:  2;
+        -webkit-column-gap: 100px; /* Chrome, Safari, Opera */
+        -moz-column-gap: 100px; /* Firefox */
+        column-gap: 100px;
     }
     #about img{
         margin-top: 20px;
@@ -511,7 +520,7 @@ textarea {
         width: 60%;        
     }
     .modal .modalGallery img {
-        width: 32.5%;
+        width: 32.8%;
     }
     .modal {
         overflow-x: hidden;
